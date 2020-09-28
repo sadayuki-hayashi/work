@@ -1,0 +1,114 @@
+div.main{
+	width:1200px;
+}
+
+div.errorArea{
+	height:100px;
+	width: 1200px;
+	margin-left: 190px;
+	color: red;
+}
+div.mainContent{
+	text-align:center;
+	width:1200px;
+}
+div.searchArea{
+	display: inline-block;
+    width: 1200px;
+}
+div.btnArea{
+	margin-top:25px;
+	text-align:right;
+	width: 1200px;
+}
+input.searchBtn{
+	margin-right: 100px;
+}
+div.productArea{
+	width:580px;
+}
+div.priceArea{
+	width:580px;
+}
+div.inlineArea{
+	display: inline-block;
+}
+div.listArea{
+	height:380px;
+	margin-top:20px;
+	display: inline-block;
+	width:1200px;
+}
+div.newProductArea{
+	width:1200px;
+	text-align:right;
+	margin-top:20px;
+}
+
+table.tableHeader{
+	width:600px;
+	border-collapse: collapse;
+	display: table;
+	table-layout: fixed;
+	margin-left: 200px;
+}
+div.tableDiv{
+	width:633px;
+	height:360px;
+	display: inline-block;
+	margin-top: -7px;
+	overflow-y: scroll;
+	margin-left: 200px;
+}
+table.tableList{
+	width:600px;
+	border-collapse: collapse;
+	display: table;
+	table-layout: fixed;
+}
+
+table.tableHeader th{
+	border:1px solid #333;
+	background-color: gray;
+	color: white;
+}
+table.tableList{
+	margin-top: 6px;
+}
+
+table.tableList td{
+	border:1px solid #333;
+}
+
+input.searchNumInput{
+	text-align:right;
+}
+
+.productIdHeader{
+	width:80px;
+}
+.productIdData{
+	width:80px;
+	text-align:right;
+}
+.productName{
+	width:180px;
+}
+.priceHeader{
+	width:120px;
+}
+.priceValue{
+	width:120px;
+	text-align:right;
+}
+.sellerId{
+	width:120px;
+}
+.detail{
+	width:100px;
+	text-align:center;
+}
+
+input.newProductBtn{
+	margin-right: 100px;
+}

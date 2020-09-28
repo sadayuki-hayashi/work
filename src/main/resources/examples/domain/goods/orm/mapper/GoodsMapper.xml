@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+          PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+          "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="examples.domain.goods.orm.mapper.GoodsMapper">
+
+	<resultMap id="goodsResult"
+		type="examples.domain.goods.model.GoodsModel">
+		<result column="productid" property="productid" />
+		<result column="productname" property="productname" />
+		<result column="price" property="price" />
+		<result column="sellerid" property="sellerid" />
+		<result column="description" property="description" />
+		<result column="updatetime" property="updatetime" />
+	</resultMap>
+
+	<select id="getGoodsList" resultMap="goodsResult" parameterType="examples.presentation.goods.list.form.GoodsSearchForm">
+		select productid,productname,price,
+				sellerid,description,updatetime
+		from product
+		where 1 = 1
+		<if test="productname != ''">
+			AND productname = #{productname}
+		</if>
+		<if test="priceMin != ''">
+			AND price >= #{priceMin}
+		</if>
+		<if test="priceMax != ''">
+			AND #{priceMax} >= price
+		</if>
+		order by productid asc
+	</select>
+
+	<select id="getGoods" resultMap="goodsResult" >
+		select productid,productname,price,
+				sellerid,description,updatetime
+		from product
+		where productid = #{productid}
+	</select>
+
+	<insert id="goodsEntry" parameterType="examples.domain.goods.model.GoodsModel">
+		insert into product (productname, price, sellerid, description)
+		values (#{productname}, #{price}, #{sellerid}, #{description})
+	</insert>
+
+	<update id="goodsUpdate" parameterType="examples.domain.goods.model.GoodsModel">
+		UPDATE product
+		SET    productname = #{productname},
+			   price   = #{price},
+			   sellerid = #{sellerid},
+			   description = #{description}
+		WHERE  productid = #{productid};
+	</update>
+
+</mapper>
